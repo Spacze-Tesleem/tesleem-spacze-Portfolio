@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import { ChevronRight } from "lucide-react";
 
-export const ProjectData = ({ image, title, description, tag }) => {
+export const ProjectData = ({ image, title, description, source, tag }) => {
   return (
     <>
       <div className="w-[400px] h-[250px] rounded-xl overflow-hidden flex-shrink-0 relative">
@@ -11,7 +11,23 @@ export const ProjectData = ({ image, title, description, tag }) => {
       <div className="flex-1">
         <h2 className="text-base font-semibold">{title}</h2>
         <p className="text-sm text-gray-400">{description}</p>
-        <p className="text-xs text-gray-500 mt-1">{tag}</p>
+        <p className="text-xs text-gray-500 mt-1">{source}</p>
+        <div className="flex flex-wrap gap-2 mt-4">
+          {Array.isArray(tag)
+            ? tag.map((t) => (
+                <span
+                  key={t}
+                  className="px-3 py-1 text-sm rounded bg-gray-200 text-gray-700"
+                >
+                  {t}
+                </span>
+              ))
+            : tag && (
+                <span className="px-3 py-1 text-sm rounded bg-gray-200 text-gray-700">
+                  {tag}
+                </span>
+              )}
+        </div>
       </div>
       <ChevronRight className="text-gray-400 hover:text-white" size={20} />
     </>
@@ -38,7 +54,8 @@ export const Project = () => {
             image="/images/dms.png"
             title="Digital Marketing Square"
             description="Designed a disruptive website, focusing on seamless user experience and interactive elements."
-            tag="Framer, Feb 2023"
+            source="Framer, Feb 2023"
+            tag={["Frontend Development","Nextjs" ,"react", "tailwind"]}
           />
         </div>
         <div className="bg-gradient-to-b from-neutral-900 to-black border border-neutral-800 p-4 rounded-2xl flex gap-4 items-center shadow-xl hover:shadow-2xl transition-shadow duration-300">
@@ -46,7 +63,7 @@ export const Project = () => {
             image="/images/olutumbi.png"
             title="OLUTUMBI BABAYOMI CHAMBERS"
             description="OLUTUMBI BABAYOMI CHAMBERS is a core litigation specialist Firm that offers topnotch, innovative and result driven services in multiple areas of law, servicing clients locally and internationally."
-            tag="Framer, Feb 2023"
+            source="Framer, Feb 2023"
           />
         </div>
         <div className="bg-gradient-to-b from-neutral-900 to-black border border-neutral-800 p-4 rounded-2xl flex gap-4 items-center shadow-xl hover:shadow-2xl transition-shadow duration-300">
@@ -54,7 +71,8 @@ export const Project = () => {
             image="/images/spc.png"
             title="SpcNft"
             description="SpcNft is a crytocurrency and NFT marketplace that allows users to buy, sell, and trade digital assets securely."
-            tag="Framer, Feb 2023"
+            source="Framer, Feb 2023"
+            tag={""}
           />
         </div>
         <div className="bg-gradient-to-b from-neutral-900 to-black border border-neutral-800 p-4 rounded-2xl flex gap-4 items-center shadow-xl hover:shadow-2xl transition-shadow duration-300">
@@ -62,7 +80,7 @@ export const Project = () => {
             image="/images/lifadoc.png"
             title="Lifadoc"
             description="SpcNft is a crytocurrency and NFT marketplace that allows users to buy, sell, and trade digital assets securely."
-            tag="Framer, Feb 2023"
+            source="Framer, Feb 2023"
           />
         </div>
         <div className="bg-gradient-to-b from-neutral-900 to-black border border-neutral-800 p-4 rounded-2xl flex gap-4 items-center shadow-xl hover:shadow-2xl transition-shadow duration-300">
@@ -70,7 +88,7 @@ export const Project = () => {
             image="/images/ecosatisfaction.png"
             title="Ecosatisfaction"
             description="At Eco-Satisfaction, our mission is to continuously adapt to changing market trends while building strong alliances with world-class partners to enable us to consistently exceed our clients’ expectations."
-            tag="Framer, Feb 2023"
+            source="Framer, Feb 2023"
           />
         </div>
         <div className="bg-gradient-to-b from-neutral-900 to-black border border-neutral-800 p-4 rounded-2xl flex gap-4 items-center shadow-xl hover:shadow-2xl transition-shadow duration-300">
@@ -78,7 +96,7 @@ export const Project = () => {
             image="/images/SpaczeGet.png"
             title="SpaczeGet"
             description="SpaczeGet is a plat."
-            tag="Framer, Feb 2023"
+            source="Framer, Feb 2023"
           />
         </div>
       </div>

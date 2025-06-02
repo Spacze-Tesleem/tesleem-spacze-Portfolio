@@ -29,7 +29,7 @@ export const Hometab = () => {
   return (
     <>
       <div className="min-h-screen flex items-center justify-center px-4">
-        <div className="max-w-4xl w-full flex flex-col md:flex-row items-start gap-6 ">
+        <div className="max-w-6xl w-full flex flex-col md:flex-row items-start gap-6 ">
           {/* Image */}
           <div className="w-full md:w-1/3 flex justify-center">
             <div className="overflow-hidden rounded-lg">
