@@ -2,7 +2,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import { Users, FileText } from "lucide-react";
-import { FaLinkedin, FaInstagram, FaTwitter, FaGithub } from "react-icons/fa";
+import { FaLinkedin, FaBriefcase, FaTwitter, FaGithub } from "react-icons/fa";
 
 const navItems = [
   {
@@ -11,9 +11,9 @@ const navItems = [
     label: "Home",
   },
   { id: "about", icon: <FileText size={20} />, label: "About" },
+  { id: "resume", icon: <FaBriefcase size={20} />, label: "Resume" },
   { id: "project", icon: <Users size={20} />, label: "Project" },
   { id: "linkedin", icon: <FaLinkedin size={20} />, label: "LinkedIn" },
-  { id: "instagram", icon: <FaInstagram size={20} />, label: "Instagram" },
   { id: "twitter", icon: <FaTwitter size={20} />, label: "Twitter" },
   { id: "github", icon: <FaGithub size={20} />, label: "GitHub" },
 ];
