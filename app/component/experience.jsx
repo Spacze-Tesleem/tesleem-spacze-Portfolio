@@ -279,6 +279,16 @@ const Experience = () => {
         <div className="flex gap-4 mb-8">
           <button
             className={`px-4 py-2 rounded-t-lg font-semibold transition-all ${
+              tab === "education"
+                ? "bg-gradient-to-r from-purple-500 to-indigo-600 text-white shadow"
+                : "bg-[#1e293b] text-purple-200"
+            }`}
+            onClick={() => setTab("education")}
+          >
+            Education
+          </button>
+          <button
+            className={`px-4 py-2 rounded-t-lg font-semibold transition-all ${
               tab === "tech"
                 ? "bg-gradient-to-r from-teal-500 to-cyan-600 text-white shadow"
                 : "bg-[#1e293b] text-teal-300"
@@ -300,15 +310,30 @@ const Experience = () => {
         </div>
         {/* Timeline */}
         <div>
-          {(tab === "tech" ? techExperiences : accountingExperiences).map(
-            (item, idx, arr) => (
+          {tab === "education" &&
+            education.map((item, idx) => (
+              <TimelineItem
+                key={idx}
+                {...item}
+                isLast={idx === education.length - 1}
+              />
+            ))}
+          {tab === "tech" &&
+            techExperiences.map((item, idx, arr) => (
               <TimelineItem
                 key={idx}
                 {...item}
                 isLast={idx === arr.length - 1}
               />
-            )
-          )}
+            ))}
+          {tab === "accounting" &&
+            accountingExperiences.map((item, idx, arr) => (
+              <TimelineItem
+                key={idx}
+                {...item}
+                isLast={idx === arr.length - 1}
+              />
+            ))}
         </div>
       </div>
     </>
